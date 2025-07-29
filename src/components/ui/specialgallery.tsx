@@ -1,20 +1,22 @@
 "use client"
 
 import * as React from "react"
-import { motion, type HTMLMotionProps, type Variants } from "framer-motion"
-
+import { motion, type HTMLMotionProps, type Variants, type Transition } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 interface GalleryGridCellProps extends HTMLMotionProps<"div"> {
   index: number
 }
-const SPRING_TRANSITION_CONFIG = {
+
+// Define a proper type for the spring config
+const SPRING_TRANSITION_CONFIG: Transition = {
   type: "spring",
   stiffness: 100,
   damping: 16,
   mass: 0.75,
   restDelta: 0.005,
 }
+
 const filterVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -25,6 +27,7 @@ const filterVariants: Variants = {
     filter: "blur(0px)",
   },
 }
+
 const areaClasses = [
   "col-start-2 col-end-3 row-start-1 row-end-3",
   "col-start-1 col-end-2 row-start-2 row-end-4", 
