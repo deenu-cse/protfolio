@@ -7,6 +7,7 @@ import InfiniteSliderimg from '../hero/imgbackground'
 import SpecialMovement from '../special/special'
 import VideoCarousel from '../videosection/video'
 import Link from "next/link";
+import ShortAchievements from "../short-achievements/sachievement";
 
 const features = [
     {
@@ -170,12 +171,14 @@ const PortfolioPage = () => {
     return (
         <div className="bg-black text-white">
             <HeroSection />
+            <div>
+                <ShortAchievements />
+            </div>
             <ProfileDetails />
 
-            {/* Video Testimonial Section */}
-            <div className="py-2 px-8 bg-linear-to-br from-[#0D1214] to-[#1A2428]">
+            {/* <div className="py-2 px-8 bg-linear-to-br from-[#0D1214] to-[#1A2428]">
                 <VideoCarousel />
-            </div>
+            </div> */}
         </div>
     );
 };
