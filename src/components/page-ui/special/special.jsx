@@ -5,6 +5,7 @@ import {
     GalleryGridCell,
 } from "@/components/ui/specialgallery"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 const IMAGES = [
     "/Drnaresh.info/Padam Shri Award Nominee Dr. Naresh Kumar Chaudhary/2.jpeg",
@@ -29,7 +30,9 @@ const SpecialMovement = () => {
                         and teaching sustainable living to protect our sacred environment.
                     </ContainerAnimated>
                     <ContainerAnimated>
-                        <Button className="bg-amber-600 hover:bg-amber-700">Explore His Journey</Button>
+                        <Link href={'/gallery'}>
+                            <Button className="bg-amber-600 hover:bg-amber-700">Explore His Journey</Button>
+                        </Link>
                     </ContainerAnimated>
                 </ContainerStagger>
 

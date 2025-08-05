@@ -89,7 +89,7 @@ const ImageModal = ({
                     </button>
                 </div>
 
-                <div className="relative flex-grow overflow-y-auto">
+                <div className="relative flex-grow overflow-hidden">
                     <AnimatePresence custom={direction} initial={false}>
                         <motion.div
                             key={currentIndex}

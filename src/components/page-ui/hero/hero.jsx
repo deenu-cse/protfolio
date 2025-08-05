@@ -8,6 +8,7 @@ import SpecialMovement from '../special/special'
 import VideoCarousel from '../videosection/video'
 import Link from "next/link";
 import ShortAchievements from "../short-achievements/sachievement";
+import ImpactMap from '../mapImpact/impactmap'
 
 const features = [
     {
@@ -60,7 +61,7 @@ const HeroSection = () => {
                             Four decades of transformative service in humanitarian aid, public health, environmental conservation, and cultural preservation.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 items-center">
-                            <Link href={'/gallery'}>
+                            <Link href={'/achievements'}>
                                 <Button className="text-sm px-8 py-3 rounded-xl bg-white text-black border border-white/10 shadow-none hover:bg-white/90 transition-none cursor-pointer">
                                     View Achievements
                                 </Button>
@@ -102,7 +103,6 @@ const ProfileDetails = () => {
         <div className="w-full py-20 px-8 bg-linear-to-br from-[#1A2428] to-[#0D1214] text-white">
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
 
-                {/* Personal Details */}
                 <div className="space-y-8">
                     <div className="space-y-4">
                         <h2 className="text-2xl font-semibold border-b border-white/20 pb-2">Personal Details</h2>
@@ -169,10 +169,13 @@ const ProfileDetails = () => {
 
 const PortfolioPage = () => {
     return (
-        <div className="bg-black text-white">
+        <div className="bg-linear-to-br from-[#1A2428] to-[#0D1214]">
             <HeroSection />
             <div>
                 <ShortAchievements />
+            </div>
+            <div className="bg-linear-to-br from-[#1A2428] to-[#0D1214] p-4">
+                <ImpactMap />
             </div>
             <ProfileDetails />
 

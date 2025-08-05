@@ -1,6 +1,5 @@
 "use client";
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
@@ -44,23 +43,34 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-linear-to-br from-[#1A2428] to-[#0D1214] text-white dark:bg-neutral-950 font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <motion.h2
+      <div className="max-w-3xl mx-auto mb-0 relative pt-10 px-6">
+        <div className="absolute -left-6 top-4 text-7xl opacity-20 bg-clip-text text-transparent bg-gradient-to-b from-blue-400 to-purple-600">
+          &quot;
+        </div>
+
+        <motion.blockquote
+          className="text-2xl md:text-3xl italic text-center font-light leading-relaxed text-neutral-200 mb-8 px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-3xl md:text-5xl font-semibold text-white mb-4 max-w-4xl leading-tight"
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+            ease: [0.2, 0.85, 0.45, 1]
+          }}
         >
-          Milestones of Service and Dedication
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-neutral-300 text-base md:text-lg max-w-2xl"
-        >
-          A look back at my journey of volunteerism, public service, and humanitarian contributions through the Indian Red Cross Society and community action.
-        </motion.p>
+          <span className="bg-gradient-to-r from-blue-300 to-purple-400 bg-clip-text text-transparent">
+            True service is not measured by awards but by the lives we touch and uplift.
+          </span>
+          <br className="hidden md:block" />
+          <span className="text-neutral-300">
+            My mission has always been to bridge humanitarian action with sustainable
+            community development, honoring both our cultural heritage and our environment.
+          </span>
+        </motion.blockquote>
+
+        <div className="absolute -right-6 bottom-4 text-7xl opacity-20 bg-clip-text text-transparent bg-gradient-to-b from-blue-400 to-purple-600">
+          &quot;
+        </div>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
